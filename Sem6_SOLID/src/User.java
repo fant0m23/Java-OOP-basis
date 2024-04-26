@@ -1,4 +1,4 @@
-public class User {
+public abstract class User {
     private String firstName;
     private String secondName;
     private String lastName;
@@ -21,12 +21,8 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getFullName(){
-        return String.format("%s %s %s", firstName,secondName,lastName);
-    }
-
     @Override
     public String toString() {
-        return getFullName();
+        return String.format("%s %s %s", firstName, secondName, lastName);
     }
 }

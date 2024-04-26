@@ -13,7 +13,7 @@ public class Student extends User implements Comparable<Student>{
 
     @Override
     public String toString() {
-        return "Student: "+ super.getFullName() + " (ID=" + studentId + ')';
+        return "Student: "+ super.toString() + " (ID=" + studentId + ')';
     }
 
     @Override

@@ -1,5 +1,11 @@
 import java.util.List;
 
-public interface UserView<U extends User> {
-    void sendOnConsole(List<U> userList);
+public class UserView<T extends User> implements IUserView<T> {
+
+    @Override
+    public void sendOnConsole(List<T> users) {
+        for (T u : users) {
+            System.out.println(u);
+        }
+    }
 }

@@ -14,7 +14,7 @@ public class Teacher extends User implements Comparable<Teacher>{
 
     @Override
     public String toString() {
-        return "Teacher: "+ super.getFullName() + " (предмет обучения - \"" + schoolSubject.toUpperCase() + "\")";
+        return "Teacher: "+ super.toString() + " (предмет обучения - \"" + schoolSubject.toUpperCase() + "\")";
     }
 
     @Override
