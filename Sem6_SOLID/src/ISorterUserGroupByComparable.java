@@ -1,5 +1,5 @@
 import java.util.List;
 
-public interface SorterUserGroupByComparable<T extends User> {
-    List<T> getSortedUserGroup();
+public interface ISorterUserGroupByComparable<G, T> {
+    List<T> getSortedUserGroup(G group);
 }

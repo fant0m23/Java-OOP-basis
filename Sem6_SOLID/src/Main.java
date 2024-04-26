@@ -11,14 +11,15 @@ public class Main {
         Teacher t1 = new Teacher("Иван", "Порфирьевич", "Бородин", "музыка");
         Teacher t2 = new Teacher("Лев", "Николаевич", "Толстой", "литература");
 
-        UserGroupChanger<IGroup<User>, User> changer = new UserGroupChanger<>();
+        UserGroupChanger<IGroup, User> changer = new UserGroupChanger<>();
 
-        IGroup<Student> studentGroup = new StudentGroup();
+        IGroup studentGroup = new StudentGroup();
         changer.add(studentGroup, s1);
         changer.add(studentGroup, s2);
         changer.add(studentGroup, s3);
         changer.remove(studentGroup, s2);
-        IGroup<Teacher> teacherGroup = new TeacherGroup();
+        changer.add(studentGroup, s2);
+        IGroup teacherGroup = new TeacherGroup();
         changer.add(teacherGroup, t1);
         changer.add(teacherGroup, t2);
 
@@ -26,18 +27,15 @@ public class Main {
         viewer.sendOnConsole(studentGroup.getUsers());
         viewer.sendOnConsole(teacherGroup.getUsers());
 
-        System.out.println("\t Метод sort (реализация Comparable, compareTo по studentID и строки schoolSubject):");
-        StudentGroupService studentsService = new StudentGroupService((StudentGroup) studentGroup);
-        TeacherGroupService teachersService = new TeacherGroupService((TeacherGroup) teacherGroup);
-//        viewer.sendOnConsole(studentsService.getSortedUserGroup());
-//        viewer.sendOnConsole(teachersService.getSortedUserGroup());
+        UserGroupSorter<IGroup, User> sorter = new UserGroupSorter<>();
 
+        System.out.println("\t Метод sort (реализация Comparable, compareTo по studentID и строки schoolSubject):");
+        viewer.sendOnConsole(sorter.getSortedUserGroup(studentGroup));
+        viewer.sendOnConsole(sorter.getSortedUserGroup(teacherGroup));
 
         System.out.println("\t Метод sort использует UserComparator (по ФИО через базовый compareTo для строк):");
-        StudentGroupService studentsService2 = new StudentGroupService((StudentGroup) studentGroup);
-        TeacherGroupService teachersService2 = new TeacherGroupService((TeacherGroup) teacherGroup);
-//        viewer.sendOnConsole(studentsService2.getSortedUserGroupByFIO());
-//        viewer.sendOnConsole(teachersService2.getSortedUserGroupByFIO());
+        viewer.sendOnConsole(sorter.getSortedUserGroupByFIO(studentGroup));
+        viewer.sendOnConsole(sorter.getSortedUserGroupByFIO(teacherGroup));
     }
 }
 
