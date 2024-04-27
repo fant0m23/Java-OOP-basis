@@ -1,6 +1,6 @@
 В проекте Семинара 4 отредактированы классы StudentGroup, TeacherGroup (убран метод add). Классы
 StudentGroupService и TeacherGroupService заменены на UserGroupSorter. Интерфейсы StudentView и TeacherView
-заменены на IUserView.
+заменены на IUserView. Отредактирован Main.
 Созданы: классы - Group, UserGroupChanger, UserGroupSorter;
          интерфейсы - IGroup, IUserGroupAdder, IUserGroupRemover, ISorterUserGroupByComparable,
                       ISorterUserGroupByCustomComparator.
