@@ -1,13 +1,12 @@
-package Controller;
+package controller;
 
 import Data.*;
 import Service.DataService;
 import Service.StudyGroupService;
-import View.StudentView;
-import View.StudyGroupView;
-import View.TeacherView;
+import view.StudentView;
+import view.StudyGroupView;
+import view.TeacherView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {

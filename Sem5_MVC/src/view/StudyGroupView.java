@@ -1,6 +1,5 @@
-package View;
+package view;
 
-import Data.Student;
 import Data.StudyGroup;
 
 public class StudyGroupView {
