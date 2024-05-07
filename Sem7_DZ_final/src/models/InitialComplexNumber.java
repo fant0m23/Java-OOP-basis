@@ -10,7 +10,6 @@ public class InitialComplexNumber implements IComplexNumber{
     public InitialComplexNumber() {
         this.realPart = 0;
         this.imaginaryPart = 0;
-        this.id = counter++;
     }
 
     public int getId() {
