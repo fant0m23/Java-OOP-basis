@@ -22,7 +22,7 @@ public class CalculatorLogger implements ILogger{
                 ENTERED_OP, "# LOGGER: Введен арифметический оператор ",
                 CALCULATED,"# LOGGER: Получен результат\t\t",
                 QUIT, "# LOGGER: Завершение работы",
-                START, "Запуск программы");
+                START, "# LOGGER: Запуск программы");
         String record = textMap.get(key) + arg + "\n\t\t  " + dtf.format(LocalDateTime.now());
         logFile.append(record).append("\n");
         System.out.println(ANSI_RED + record + ANSI_RESET);
