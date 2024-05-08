@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
+import static controller.Msg.*;
 
 public class CalculatorLogger implements ILogger{
 
@@ -15,13 +16,13 @@ public class CalculatorLogger implements ILogger{
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss ");
 
     @Override
-    public void info(String key, String arg) {
-        Map<String,String> textMap = Map.of(
-                "enteredNumber", "# LOGGER: Введено комплексное число ",
-                "enteredOperator", "# LOGGER: Введен арифметический оператор ",
-                "calculated","# LOGGER: Получен результат\t\t",
-                "quit", "# LOGGER: Завершение работы",
-                "start", "Запуск программы");
+    public void info(Msg key, String arg) {
+        Map<Msg,String> textMap = Map.of(
+                ENTERED_NUM, "# LOGGER: Введено комплексное число ",
+                ENTERED_OP, "# LOGGER: Введен арифметический оператор ",
+                CALCULATED,"# LOGGER: Получен результат\t\t",
+                QUIT, "# LOGGER: Завершение работы",
+                START, "Запуск программы");
         String record = textMap.get(key) + arg + "\n\t\t  " + dtf.format(LocalDateTime.now());
         logFile.append(record).append("\n");
         System.out.println(ANSI_RED + record + ANSI_RESET);

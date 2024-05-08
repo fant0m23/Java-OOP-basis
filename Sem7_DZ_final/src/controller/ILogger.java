@@ -1,6 +1,6 @@
 package controller;
 
 public interface ILogger {
-    void info(String key, String arg);
+    void info(Msg key, String arg);
     void saveToFile();
 }

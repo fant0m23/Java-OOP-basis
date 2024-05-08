@@ -1,7 +1,7 @@
 package view;
 
 public interface InputUI {
-    void textOnConsole(String key);
+    void textOnConsole(Text key);
     char getOperator();
     char getAction();
     void closeScanner();
